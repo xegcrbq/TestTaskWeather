@@ -1,0 +1,22 @@
+﻿@page
+@model TestTask.Pages.WeatherData.CreateModel2
+
+@{
+    ViewData["Title"] = "Загрузка архивов погодных условий в городе Москве";
+}
+
+<h1>Загрузка архивов погодных условий в городе Москве</h1>
+<hr />
+<form method="post" enctype="multipart/form-data">
+    <input type="file" asp-for="Uploads" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,
+       application/vnd.ms-excel" multiple/>
+    <input type="submit" />
+</form>
+
+<div>
+    <a asp-page="Index">Перейти к просмотру архивов погодных условий в городе Москве</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

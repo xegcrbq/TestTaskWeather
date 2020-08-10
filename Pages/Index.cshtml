@@ -1,0 +1,15 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Главная";
+}
+
+<h1>Погода в Москве</h1>
+<ul class="navbar-nav flex-grow">
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/weatherdata/Index">Просмотр архивов погодных условий в городе Москве</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/weatherdata/Create2">Загрузка архивов погодных условий в городе Москве</a>
+    </li>
+</ul>

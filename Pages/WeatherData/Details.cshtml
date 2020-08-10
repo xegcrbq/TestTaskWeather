@@ -1,0 +1,91 @@
+﻿@page
+@model TestTask.Pages.WeatherData.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>WeatherDatum</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeatherDatum.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WeatherDatum.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeatherDatum.Time)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WeatherDatum.Time)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeatherDatum.TemperatureC)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WeatherDatum.TemperatureC)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeatherDatum.AirWetness)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WeatherDatum.AirWetness)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeatherDatum.Td)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WeatherDatum.Td)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeatherDatum.Pressure)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WeatherDatum.Pressure)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeatherDatum.WindDirection)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WeatherDatum.WindDirection)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeatherDatum.windSpeed)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WeatherDatum.windSpeed)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeatherDatum.cloudness)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WeatherDatum.cloudness)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeatherDatum.h)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WeatherDatum.h)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeatherDatum.vv)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WeatherDatum.vv)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeatherDatum.veatherEffects)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WeatherDatum.veatherEffects)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.WeatherDatum.ID">Изменить</a> |
+    <a asp-page="./Index">Вернуться назад</a>
+</div>

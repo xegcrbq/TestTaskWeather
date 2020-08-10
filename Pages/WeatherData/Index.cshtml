@@ -1,0 +1,113 @@
+﻿@page
+@model TestTask.Pages.WeatherData.IndexModel
+
+@{
+    ViewData["Title"] = "Просмотр архивов погодных условий в городе Москве";
+}
+
+<h1>Просмотр архивов погодных условий в городе Москве</h1>
+
+<form>
+    <p>
+        <select asp-for="Year" asp-items="Model.Years" onchange="this.form.submit()">
+            <option value="">Выберете год</option>
+        </select>
+        <select asp-for="Mounth" asp-items="Model.Mounths" onchange="this.form.submit()">
+            <option value="">Выберете Месяц</option>
+        </select>
+    </p>
+</form>
+<p>
+    <a asp-page="Create">Создать новый</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WeatherDatum[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeatherDatum[0].Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeatherDatum[0].TemperatureC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeatherDatum[0].AirWetness)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeatherDatum[0].Td)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeatherDatum[0].Pressure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeatherDatum[0].WindDirection)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeatherDatum[0].windSpeed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeatherDatum[0].cloudness)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeatherDatum[0].h)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeatherDatum[0].vv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeatherDatum[0].veatherEffects)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.WeatherDatum)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TemperatureC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AirWetness)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Td)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pressure)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WindDirection)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.windSpeed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cloudness)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.h)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.veatherEffects)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Детали</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
